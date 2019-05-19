@@ -23,6 +23,11 @@ class SuperheroesList(APIView):
             return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class SuperheroesListForFrontEnd(APIView):
+    def get(self, request, format=None):
+        superheroes = Superheroe.objects.all()
+        serializer = SuperheroeSerializer(superheroes, many=True)
+        return JsonResponse(serializer.data,safe=False)
 
 class SuperheroDetail(APIView):
 

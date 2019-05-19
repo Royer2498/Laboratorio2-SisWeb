@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>superheroes</title>
+
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -17,6 +18,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="{% static 'js/cambiarColor.js' %}" type="text/javascript"></script>
+
 </head>
 
 <body id="cuerpo">
@@ -33,7 +35,7 @@
                 <a class="nav-item nav-link" href="#">Peliculas</a>
             </div>
         </div>
-        <button class="btn btn-outline-success my-2 my-sm-0" onclick="cambiarFondo()">Cambiar fondo</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" onclick="cambiarFondo()">Crear Heroe</button>
     </nav>
     <br><br>
     <div class="container">
@@ -47,6 +49,9 @@
                     <p class="card-text"> <span> <strong>Biografia: </strong></span> {{hero.bio}}</p>
                     <p class="card-text"> <span> <strong>Poder: </strong></span> {{hero.power}}</p>
                     <p class="card-text"> <span> <strong>Casa: </strong></span> {{hero.house}}</p>
+                    <button onclick="redireccionar()" id="editButton" type="button" class="btn btn-outline-primary btn-block">Editar</button>
+                    <button href="../templates/createHero.html" id="editButton" type="button" class="btn btn-outline-danger btn-block">Eliminar</button>
+                    <a href="../templates/createHero.html" >askdjasdlk</a>
                 </div>
             </div>
             {% endfor %}

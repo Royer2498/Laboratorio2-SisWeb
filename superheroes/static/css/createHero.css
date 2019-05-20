@@ -1,0 +1,14 @@
+#cuerpo{
+    background-color: darkgrey;
+}
+
+#navbar{
+    height: 85px;
+    font-family: fantasy;
+    font-size: 18px;
+}
+
+#form-card{
+    margin-left: 350px;
+    margin-right: 350px;
+}

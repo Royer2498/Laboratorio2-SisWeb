@@ -29,6 +29,18 @@ class SuperheroesListForFrontEnd(APIView):
         serializer = SuperheroeSerializer(superheroes, many=True)
         return JsonResponse(serializer.data,safe=False)
 
+class EditHeroView(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    
+    def get(self, request, format=None):
+        return Response(template_name='editHero.html',status=status.HTTP_200_OK)
+
+class CreateHeroView(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    
+    def get(self, request, format=None):
+        return Response(template_name='createHero.html',status=status.HTTP_200_OK)
+
 class SuperheroDetail(APIView):
 
     def get_object(self, pk):
